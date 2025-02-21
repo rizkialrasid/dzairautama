@@ -1,0 +1,165 @@
+:root {
+  --primary: #e607fa;
+  --bg: #b2ebf0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: aliceblue;
+  min-height: 200px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: url("../img/logo.jpeg");
+  min-height: 50hv;
+  background-position: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: 5%;
+  border-bottom: 3px solid #080808;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Navbar LOGO */
+.navbar .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 650;
+  color: rgb(10, 220, 248);
+  font-style: bold italic;
+  align-items: center;
+}
+
+.navbar .navbar-logo span {
+  color: #e607fa;
+  font-style: italic;
+}
+
+/* Navbar MENU */
+.navbar .navbar-nav a {
+  color: hsl(186, 93%, 50%);
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0.8rem;
+  align-items: center;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scale(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scale(0.8);
+}
+
+/* Navbar ICON */
+.navbar .navbar-extra a {
+  color: hsl(186, 96%, 50%);
+  margin: 0.8rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-extra a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scale(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a:hover::after {
+  transform: scale(0.5);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #ffffff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scalex(0.2);
+  }
+}
+
+/* Handphone */
+@media (max-width: 375px) {
+  html {
+    font-size: 55%;
+  }
+}
