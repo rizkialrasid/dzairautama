@@ -631,14 +631,13 @@ footer .credit a {
   }
 
   .about .row .about-img img {
-    height: 45rem;
+    height: 35rem;
     object-fit: cover;
     object-position: center;
   }
 
   .about .row .content {
     padding: 0;
-    
   }
 
   .about .row .content h3 {
